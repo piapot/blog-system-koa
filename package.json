@@ -1,0 +1,35 @@
+{
+  "name": "blog-system-koa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "tsup index.js --watch --format cjs --onSuccess \"node dist/index.js\"",
+    "build": "rimraf dist && tsup index.js dist/index.js --format cjs --minify",
+    "start": "esno dist/index.js",
+    "fmt": "prettier -w **/*.{js,json}",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.3.0",
+    "chalk": "^4",
+    "dayjs": "^1.11.1",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-compress": "^5.1.0",
+    "koa-helmet": "^6.1.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^10.1.1",
+    "sqlite3": "^5.0.7"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "esno": "^0.14.1",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "tsup": "^5.12.7"
+  }
+}
